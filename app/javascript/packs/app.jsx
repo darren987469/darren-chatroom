@@ -4,23 +4,23 @@
 
 import React from 'react'
 import ReactDOM from 'react-dom'
-import PropTypes from 'prop-types'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import AppBar from 'material-ui/AppBar'
 
-const Hello = props => (
-  <div>Hello {props.name}!</div>
+const App = () => (
+  <MuiThemeProvider>
+    <AppBar
+      title="Admin Dashboard"
+      iconClassNameRight="muidocs-icon-navigation-expand-more"
+    />
+  </MuiThemeProvider>
 )
 
-Hello.defaultProps = {
-  name: 'David'
-}
 
-Hello.propTypes = {
-  name: PropTypes.string
-}
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-    <Hello name="React" />,
+    <App />,
     document.body.appendChild(document.createElement('div')),
   )
 })
